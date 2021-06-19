@@ -21,6 +21,8 @@ import com.google.android.material.textfield.TextInputEditText;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     public TextInputEditText email, password;
     //The log in button
     public Button loginBtn;
+
+    String jwtToken = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
         logInRequest.setUsername(email.getText().toString());
         logInRequest.setPassword(password.getText().toString());
 
+
         Call<LogInResponse> logInResponseCall = APIClient.getInterface().userLogin(logInRequest);
         logInResponseCall.enqueue(new Callback<LogInResponse>() {
             @Override
@@ -78,9 +83,11 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Log In Successful", Toast.LENGTH_SHORT).show();
                     LogInResponse loginResponse = response.body();
                     boolean JWTToken = loginResponse.getResponse().startsWith("Error");
-                    if (JWTToken == false)
+                    if (!JWTToken)
                     {
-                        openHomeActivity();
+                        jwtToken = loginResponse.getResponse();
+                        openHomeActivity(jwtToken);
+
                     }
                     else
                     {
@@ -97,10 +104,26 @@ public class MainActivity extends AppCompatActivity {
                 call.cancel();
             }
         });
+
     }
 
-    private void openHomeActivity() {
+    private void openHomeActivity(String jwtToken) {
+
         Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
+        LogInRequest logInRequest = new LogInRequest();
+
+        Call<LogInResponse> logInResponseCall = APIClient.getInterface().getUser("Bearer "+jwtToken);
+        logInResponseCall.enqueue(new Callback<LogInResponse>() {
+            @Override
+            public void onResponse(Call<LogInResponse> call, Response<LogInResponse> response) {
+                LogInResponse logInResponse = response.body();
+            }
+
+            @Override
+            public void onFailure(Call<LogInResponse> call, Throwable t) {
+
+            }
+        });
     }
 }
