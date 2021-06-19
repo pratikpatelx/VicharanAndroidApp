@@ -1,0 +1,2 @@
+rootProject.name = "Vicharan Application"
+include ':app'

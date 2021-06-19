@@ -1,0 +1,31 @@
+<resources>
+    <string name="header_title">Vicharan Application</string>
+    <string name="app_name">Jai Swaminarayan </string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tag">Please Log In</string>
+    <string name="e_mail">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Log In</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="forgot_password">forgot password</string>
+    <string name="title_activity_bottom_nav_bar">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="details">Details</string>
+    <string name="breakfast">Breakfast</string>
+    <string name="lunch">Lunch</string>
+    <string name="night">Night</string>
+    <string name="sabha">Sabha</string>
+    <string name="cancel">Cancel</string>
+    <string name="update">Update</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>
