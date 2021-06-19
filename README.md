@@ -1,23 +1,24 @@
-# VicharanAndroidApp.
-The purpose for this APP is to allow saints at BAPS Africa, Plan, Organize and Analyze their daily routine.
+# VicharanAndroidApp
+
+Vicharan is an application that allows saints at BAPS Africa, Plan, Organize and Analyze their daily routine.
 
 Project is to be used and Implemented for the BAPS Africa Organization https://www.baps.org/Global-Network/Africa.aspx
 
-Vicharan Application that connects to a Spring boot REST API using Retrofit.
+Vicharan Application connects to a Spring boot REST API to retrieve all the information using Retrofit.
 
-Setup
+## Setup
 
-Clone the project from GitHub: https://github.com/pratikpatelx/VicharanApplication.git
+1. Clone the project from GitHub: https://github.com/pratikpatelx/VicharanApplication.git
 
-In Android Studio, open a project from version control (i.e. Git)
-Copy and past the copied URL
-Open the project
-Build & run project
+1. In Android Studio, open a project from version control (i.e. Git)
+1. Copy and past the copied URL
+1. Open the project
+1. Build & run project
 
-The Project STACK:
+## The Project STACK
 
-Front-End: Java (Android Studio) with Retrofit
+Front-End: **Java (Android Studio) with Retrofit**
 
-Back-End: Java Spring Boot REST API
+Back-End: **Java Spring Boot REST API**
 
-Database: MongoDB stored Locally 
+Database: **MongoDB stored Locally**
